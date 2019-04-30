@@ -22,18 +22,26 @@ with open(cash_csv,'r') as csvfile:
 
     # Split csv data by comma
     csvreader = csv.reader(csvfile, delimiter=',')
+    # do not print the header
+    header = next(csvreader)
     # Alright, what meow?
     for row in csvreader:
         # Add month to month list
         all_months.append(row[0])
-        # TEST LINE!!!
-        print(all_months)
 
         # Add profit to profits list
-        # all_profits.append(row[1])
+        all_profits.append(row[1])
+        
 
-    # do not print the header
-    header = next(csvreader)
+# What will the print report look like?
+print("Financial Analysis")
+print("----------------------------")
+# How to print count of total months
+total_months=len(all_months)
+print("Total Months: " + str(total_months))
+# How to print total profits
+total_profits = sum(all_profits)
+print(total_profits)   
 
 # Set variable for output file
 #--> output_file = os.path.join("financial_analsis.txt")
