@@ -1,17 +1,16 @@
-# Declarations
 import os
 import csv
-# Show me the money
+
 cash_csv = os.path.join('..','Resources','budget_data.csv')
-# Open and Read
+
 with open(cash_csv, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     # Skip headers when counting data
     csv_header = next(csvfile)
-    # Empty lists 
+    
     all_months = []
     all_profits = []
-    # Put stuff in lists
+
     for row in csvreader:
         months = row[0]
         profits = int(row[1])
@@ -31,6 +30,3 @@ max = max(all_profits)
 min = min(all_profits)
 print("Greatest Increase in Profits: " + "($" + str(max) + ")")
 print("Greatest Decrease in Profits: " + "($" + str(min) + ")")
-
-#Create output file
-output_file = os.path.join("PyBank_Analysis.csv")
