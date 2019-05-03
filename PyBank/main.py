@@ -28,10 +28,10 @@ with open(cash_csv,'r') as csvfile:
     for row in csvreader:
         # Add month to month list
         all_months.append(row[0])
-
         # Add profit to profits list
         all_profits.append(row[1])
-        
+        # Turn string values into integer values
+        num_profits = map(int, all_profits)
 
 # What will the print report look like?
 print("Financial Analysis")
@@ -39,9 +39,10 @@ print("----------------------------")
 # How to print count of total months
 total_months=len(all_months)
 print("Total Months: " + str(total_months))
+
 # How to print total profits
-total_profits = sum(all_profits)
-print(total_profits)   
+sum_profits = sum(num_profits)
+print(sum_profits)
 
 # Set variable for output file
 #--> output_file = os.path.join("financial_analsis.txt")
