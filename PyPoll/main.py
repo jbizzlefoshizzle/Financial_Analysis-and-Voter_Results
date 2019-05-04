@@ -1,6 +1,10 @@
 # I do declare
 import os
 import csv
+# new stuff!
+# need for final printout of winner
+import statistics
+from statistics import mode
 
 # Vote or die
 vote_csv = os.path.join('..','Resources','election_data.csv')
@@ -51,4 +55,8 @@ print("Correy: " + str(correy_percent_formatted)+"% (" + str(correy) + ")")
 print("Li: " + str(li_percent_formatted)+"% (" + str(li) + ")")
 print("O'Tooley: " + str(o_tooley_percent_formatted)+"% (" + str(o_tooley) + ")")
 print("-------------------------")
+
+# So who won?
+
+
 print("Winner: ")

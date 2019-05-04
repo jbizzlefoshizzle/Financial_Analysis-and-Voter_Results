@@ -17,6 +17,13 @@ with open(cash_csv, newline="") as csvfile:
         profits = int(row[1])
         all_months.append(months)
         all_profits.append(profits)
+        # Month of max/min
+        big_money = max(all_profits)
+        lose_money = min(all_profits)
+        if row[1] == str(lose_money):
+            lose_money_day = row[0]
+        if row[1] == str(big_money):
+            big_money_day = row[0]
 
 # What will the print report look like?
 print("Financial Analysis")
@@ -25,12 +32,14 @@ print("----------------------------")
 print("Total Months: " + str(len(all_months)))
 print("Total: $" + str(sum(all_profits)))
 # How to find average
-# NEEEED HEEEELLLPPP
+average = sum(all_profits)/len(all_months)
+average_dollars = format(average,'.2f')
+print("Average Change: $" + str(average_dollars))
 # How to find greatest increase and decrease
 max = max(all_profits)
 min = min(all_profits)
-print("Greatest Increase in Profits: " + "($" + str(max) + ")")
-print("Greatest Decrease in Profits: " + "($" + str(min) + ")")
+print("Greatest Increase in Profits: " + str(big_money_day) + " ($" + str(max) + ")")
+print("Greatest Decrease in Profits: " + str(lose_money_day) + " ($" + str(min) + ")")
 
 #Create output file
 ##output_file = os.path.join("PyBank_Analysis.csv")
