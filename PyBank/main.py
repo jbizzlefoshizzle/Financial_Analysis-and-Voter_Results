@@ -25,7 +25,7 @@ with open(cash_csv, newline="") as csvfile:
         if row[1] == str(big_money):
             big_money_day = row[0]
 
-p = open("PyBank_Analysis.txt", "a")
+p = open("Financial_Analysis.txt", "a")
 # What will the terminal report look like?
 print("Financial Analysis")
 print("----------------------------")
@@ -34,6 +34,7 @@ print("Total Months: " + str(len(all_months)))
 print("Total: $" + str(sum(all_profits)))
 
 # How to find average
+# FIX MEEEE
 average = sum(all_profits)/len(all_months)
 average_dollars = format(average,'.2f')
 print("Average Change: $" + str(average_dollars))
