@@ -1,8 +1,7 @@
 # I do declare
 import os
 import csv
-# new stuff!
-# need for final printout of winner
+# new stuff! need for final printout of winner
 from statistics import mode
 
 # Vote or die
