@@ -3,7 +3,7 @@ import os
 import csv
 # new stuff!
 # need for final printout of winner
-from collections import Counter
+from statistics import mode
 
 # Vote or die
 vote_csv = os.path.join('..','Resources','election_data.csv')
@@ -47,7 +47,6 @@ correy_percent_formatted = format(correy_percent, '.3f')
 li_percent_formatted = format(li_percent, '.3f')
 o_tooley_percent_formatted = format(o_tooley_percent, '.3f')
 
-# Printy McPrintface
 # Print names, percents, counts
 print("Khan: " + str(khan_percent_formatted)+"% (" + str(khan) + ")")
 print("Correy: " + str(correy_percent_formatted)+"% (" + str(correy) + ")")
@@ -56,8 +55,20 @@ print("O'Tooley: " + str(o_tooley_percent_formatted)+"% (" + str(o_tooley) + ")"
 print("-------------------------")
 
 # So who won?
-for x in list_candidate:
-    d[x] = += 1
-    winner = max(d.iteritems())
-#winner = Counter(list_candidate).most_common(1)
+winner = mode(list_candidate)
 print("Winner: " + str(winner))
+print("-------------------------")
+
+# STOP! [PRINTING] TIME
+x = open("Election_Results.txt", "a")
+print("Election Results", file=x)
+print("-------------------------", file=x)
+print("Total Votes: " + str(len(list_voter_id)), file=x)
+print("-------------------------", file=x)
+print("Khan: " + str(khan_percent_formatted)+"% (" + str(khan) + ")", file=x)
+print("Correy: " + str(correy_percent_formatted)+"% (" + str(correy) + ")", file=x)
+print("Li: " + str(li_percent_formatted)+"% (" + str(li) + ")", file=x)
+print("O'Tooley: " + str(o_tooley_percent_formatted)+"% (" + str(o_tooley) + ")", file=x)
+print("-------------------------", file=x)
+print("Winner: " + str(winner), file=x)
+print("-------------------------", file=x)
