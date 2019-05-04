@@ -3,8 +3,7 @@ import os
 import csv
 # new stuff!
 # need for final printout of winner
-import statistics
-from statistics import mode
+from collections import Counter
 
 # Vote or die
 vote_csv = os.path.join('..','Resources','election_data.csv')
@@ -57,6 +56,8 @@ print("O'Tooley: " + str(o_tooley_percent_formatted)+"% (" + str(o_tooley) + ")"
 print("-------------------------")
 
 # So who won?
-
-
-print("Winner: ")
+for x in list_candidate:
+    d[x] = += 1
+    winner = max(d.iteritems())
+#winner = Counter(list_candidate).most_common(1)
+print("Winner: " + str(winner))
