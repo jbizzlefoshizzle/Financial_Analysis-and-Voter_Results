@@ -5,6 +5,7 @@ import csv
 from statistics import mode
 
 # Vote or die
+# Script will NOT run on my github due to inability to push local csv into master branch
 vote_csv = os.path.join('..','Resources','election_data.csv')
 # Open and read
 with open(vote_csv, newline="") as csvfile:
