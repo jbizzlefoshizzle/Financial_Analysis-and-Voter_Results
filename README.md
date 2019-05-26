@@ -19,7 +19,7 @@ Not only does the script print the analysis to the terminal, but it also exports
 I was tasked with helping a small, rural town modernize its vote-counting process.
 (Up until now, Uncle Cleetus had been trustfully tallying them one-by-one, but unfortunately, his concentration isn't what it used to be.)
 I was given a set of poll data within election_data.csv.
-The dataset is composed of three columns: Voter ID, County, and Candidate.
+The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`.
 
 I needed to create a Python script that analyzed the votes and calculated:
 - the total number of votes cast
@@ -29,7 +29,7 @@ I needed to create a Python script that analyzed the votes and calculated:
 - the winner of the election based on popular vote.
 
 #### Warning!
-The PyPoll directory is missing election_data.csv.
+The PyPoll directory is missing `election_data.csv`.
 Due to its massive file size, I could not upload it from my local repository to my remote one.
 As a result, the script will not properly run.
 
