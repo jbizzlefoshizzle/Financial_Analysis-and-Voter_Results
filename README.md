@@ -2,6 +2,9 @@
 In this repository are two different projects.
 
 ### PyBank
+
+![Revenue](Images/revenue-per-lead.jpg)
+
 I was tasked with creating a Python script for analyzing the financial records of a company.
 I was given a set of financial data within budget_data.csv.
 The dataset is composed of two columns: `Date` and `Profit/Losses`.
@@ -16,6 +19,9 @@ I needed to create a Python script that analyzed the data to calculate:
 Not only does the script print the analysis to the terminal, but it also exports a .txt file with the necessary results.
 --------------------------------------------------------------------------------------------------------------------------
 ### PyPoll
+
+![Vote-Counting](Images/Vote_counting.jpg)
+
 I was tasked with helping a small, rural town modernize its vote-counting process.
 (Up until now, Uncle Cleetus had been trustfully tallying them one-by-one, but unfortunately, his concentration isn't what it used to be.)
 I was given a set of poll data within election_data.csv.
