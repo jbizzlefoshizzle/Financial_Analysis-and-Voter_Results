@@ -4,7 +4,7 @@ In this repository are two different projects.
 ### PyBank
 I was tasked with creating a Python script for analyzing the financial records of a company.
 I was given a set of financial data within budget_data.csv.
-The dataset is composed of two columns: Date and Profit/Losses.
+The dataset is composed of two columns: `Date` and `Profit/Losses`.
 
 I needed to create a Python script that analyzed the data to calculate:
 - the total number of months included in the dataset
