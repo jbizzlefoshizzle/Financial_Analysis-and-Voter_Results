@@ -28,5 +28,10 @@ I needed to create a Python script that analyzed the votes and calculated:
 - the total number of votes each candidate won
 - the winner of the election based on popular vote.
 
+#### Warning!
+The PyPoll directory is missing election_data.csv.
+Due to its massive file size, I could not upload it from my local repository to my remote one.
+As a result, the script will not properly run.
+
 Not only does the script print the analysis to the terminal, but it also exports a .txt file with the necessary results.
 --------------------------------------------------------------------------------------------------------------------------
