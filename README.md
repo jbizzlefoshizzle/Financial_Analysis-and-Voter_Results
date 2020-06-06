@@ -1,7 +1,7 @@
 # Financial Analysis and Voter Results
 In this repository are two different projects.
 
-### PyBank
+### Python Script for Banking Data
 
 ![Revenue](Images/revenue-per-lead.jpg)
 
@@ -18,7 +18,7 @@ I needed to create a Python script that analyzed the data to calculate:
 
 Not only does the script print the analysis to the terminal, but it also exports a .txt file with the necessary results.
 --------------------------------------------------------------------------------------------------------------------------
-### PyPoll
+### Python Script for Polling Data
 
 ![Vote-Counting](Images/Vote_counting.jpg)
 
