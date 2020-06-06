@@ -4,8 +4,29 @@ import csv
 #NEED THIS TO CALCULATE DIFFERENCES BETWEEN MONTHS
 import numpy as np
 
+# Defining max and min functions
+# -------------------------------------
+def max(array, n):
+    
+    max = array[0]
+    
+    for i  in range (1, n):
+        if array[i] > max:
+            max = array[i]
+    return max
+# -------------------------------------
+def min(array, n):
+    
+    min = array[0]
+    
+    for i  in range (1, n):
+        if array[i] < min:
+            min = array[i]
+    return min
+
 # Show me the money
 cash_csv = os.path.join('..','Resources','budget_data.csv')
+
 # Open and Read
 with open(cash_csv, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
@@ -20,40 +41,32 @@ with open(cash_csv, newline="") as csvfile:
         profits = int(row[1])
         all_months.append(months)
         all_profits.append(profits)
-        # Month of max/min
-        big_money = max(all_profits)
-        lose_money = min(all_profits)
-        if row[1] == str(lose_money):
-            lose_money_day = row[0]
-        if row[1] == str(big_money):
-            big_money_day = row[0]
-            
-# What will the terminal report look like?
-print("Financial Analysis")
-print("----------------------------")
-# How to print count of total months and total $$$
-print("Total Months: " + str(len(all_months)))
-print("Total: $" + str(sum(all_profits)))
+        
+#         Months of largest profit/loss
+        
+        n = len(all_profits)
+        biggest_profit = max(all_profits, n)
+        biggest_loss = min(all_profits, n)
+        
+        if row[1] == str(biggest_profit):
+            big_profit_month = row[0]
+        if row[1] == str(biggest_loss):
+            big_loss_month = row[0]
 
 # Create list of changes between months
 monthly_changes = np.diff(all_profits)
 # How to find average
 average = sum(monthly_changes)/len(monthly_changes)
-average_dollars = format(average,'.2f')
-print("Average Change: $" + str(average_dollars))
+average_change = format(average,'.2f')
 
-# How to find greatest increase and decrease
-max = max(monthly_changes)
-min = min(monthly_changes)
-print("Greatest Increase in Profits: " + str(big_money_day) + " ($" + str(max) + ")")
-print("Greatest Decrease in Profits: " + str(lose_money_day) + " ($" + str(min) + ")")
+m = len(monthly_changes)
+greatest_increase = max(monthly_changes, m)
+greatest_loss = min(monthly_changes, m)
 
-# What will the text output look like?
-p = open("Financial_Analysis.txt", "a")
-print("Financial Analysis", file=p)
-print("----------------------------", file=p)
-print("Total Months: " + str(len(all_months)), file=p)
-print("Total: $" + str(sum(all_profits)), file=p)
-print("Average Change: $" + str(average_dollars), file=p)
-print("Greatest Increase in Profits: " + str(big_money_day) + " ($" + str(max) + ")", file=p)
-print("Greatest Decrease in Profits: " + str(lose_money_day) + " ($" + str(min) + ")", file=p)
+print("Financial Analysis")
+print("----------------------------")
+print("Total Months: " + str(len(all_months)))
+print("Total: $" + str(sum(all_profits)))
+print("Average Change: $" + str(average_change))
+print("Greatest Increase in Profits: " + str(big_profit_month) + " ($" + str(greatest_increase) + ")")
+print("Greatest Decrease in Profits: " + str(big_loss_month) + " ($" + str(greatest_loss) + ")")
